@@ -1,0 +1,7 @@
+.main-page-content__list {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+    line-height: 1.6;
+    list-style-type: disc;
+    list-style-position: outside;
+}
