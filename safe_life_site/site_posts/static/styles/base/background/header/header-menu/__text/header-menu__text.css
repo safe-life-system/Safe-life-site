@@ -1,0 +1,17 @@
+.header-menu__text {
+    font-family: 'Inter', sans-serif;
+    color: #E5E7EB;
+    font-size: 24px;
+}
+
+.header-menu__text_size_big-size {
+    font-size: 32px;
+}
+
+.header-menu__text_size_small-size {
+    font-size: 16px;
+}
+
+.header-menu__text_margin_top {
+    margin-top: 10px;
+}

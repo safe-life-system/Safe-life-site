@@ -1,0 +1,8 @@
+.footer-menu__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: auto;
+    color: #FFFFFF;
+    opacity: 0.7;
+    list-style: none;
+}

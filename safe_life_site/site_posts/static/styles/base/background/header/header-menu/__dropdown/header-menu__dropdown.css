@@ -1,0 +1,7 @@
+.header-menu__dropdown {
+    position: relative;
+}
+
+.header-menu__dropdown:hover .header-menu__sub-menu {
+    display: block;
+}

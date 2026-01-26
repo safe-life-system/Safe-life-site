@@ -1,0 +1,11 @@
+.header-menu__sub-menu {
+    width: 210px;
+    position: absolute;
+    background-color: #262A37;
+    padding-left: 24px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    border: #262A37 1px solid;
+    gap: 10px;
+    display: none;
+}

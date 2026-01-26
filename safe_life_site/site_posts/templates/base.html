@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles/global.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/base/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="background">
+    <header class="header">
+        <nav class="header-menu">
+            <li><a href="#" class="header-menu__text header-menu__text_size_big-size">О проекте</a></li>
+            <li class="header-menu__dropdown">
+                <a class="header-menu__text">Программы</a>
+                <ul class="header-menu__sub-menu">
+                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="#">Manager-passwords</a></li>
+                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="#">Messenger</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="header-menu__text">Ядро</a></li>
+            <li><a href="#" class="header-menu__text">Форум</a></li>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+        <nav class="footer-menu">
+            <p class="footer-menu__text">Контакты:</p>
+            <li class="footer-menu__text"><a href="https://t.me/puky_kaky">Телеграмм</a></li>
+            <li class="footer-menu__text"><a href="https://github.com/Cheef44">Github</a></li>
+        </nav>
+        <div class="footer__content">
+            <p class="footer__title">Safe Life System</p>
+            <p class="footer__copirate-text">© 2026 Safe Life System. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
