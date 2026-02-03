@@ -6,22 +6,29 @@
     <link rel="stylesheet" href="{% static 'styles/global.css' %}">
     <link rel="stylesheet" href="{% static 'styles/base/main.css' %}">
     <link rel="stylesheet" href="{% static 'styles/main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body class="background">
     <header class="header">
         <nav class="header-menu">
-            <li><a href="#" class="header-menu__text header-menu__text_size_big-size">О проекте</a></li>
+            <li><a href="/" class="header-menu__text header-menu__text_size_big-size">О проекте</a></li>
             <li class="header-menu__dropdown">
                 <a class="header-menu__text">Программы</a>
                 <ul class="header-menu__sub-menu">
-                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="#">Manager-passwords</a></li>
-                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="#">Messenger</a></li>
+                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="/manager-passwords/">Manager-passwords</a></li>
+                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="/messenger/">Messenger</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="header-menu__text">Ядро</a></li>
-            <li><a href="#" class="header-menu__text">Форум</a></li>
+            <li><a href="/core/" class="header-menu__text">Ядро</a></li>
+            <li><a href="/forum/" class="header-menu__text">Форум</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="#" class="header-menu__text">{{ user.username }}</a></li>
+            {% else %}
+                <li><a href={% url 'user_login' %} class="header-menu__text">Войти</a></li>
+                <li><a href={% url 'user_registration' %} class="header-menu__text">Регистрация</a></li>
+            {% endif %}
         </nav>
     </header>
     <div class="content">
