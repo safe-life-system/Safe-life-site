@@ -1,0 +1,12 @@
+.login-block_input, #id_username, #id_password1, #id_password2 {
+    width: 400px;
+    height: 51px;
+    background-color: #DCDCDC;
+    border: solid black 1px;
+    opacity: 50%;
+    color: black;
+    font-size: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}

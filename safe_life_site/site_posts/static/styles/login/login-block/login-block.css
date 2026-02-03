@@ -1,0 +1,13 @@
+.login-block {
+    background-color: #3B4155;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 440px;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    font-family: sans-serif;
+}

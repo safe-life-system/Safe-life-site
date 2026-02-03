@@ -1,0 +1,11 @@
+.login-block__user-save {
+    width: 230px;
+    height: 52px;
+    background-color: #090C15;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="login-block login-block__position">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="login-block_input" type="text" placeholder="Имя" name='username'>
+            <input class="login-block_input" placeholder="Пароль" name='password' type="password">
+            <button class="login-block__user-save" type="submit" value="Login">Войти</button>
+        </form>
+    </div>
+{% endblock %}
