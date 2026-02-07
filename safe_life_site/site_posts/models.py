@@ -1,3 +1,30 @@
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
+def user_directory_path(instance, filename):
+    return f'{instance.branche.name_branche}/{instance.author.username}/%Y/%m/%d/{filename}'
 
 # Create your models here.
+class Branches(models.Model):
+    name_branche = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.name_branche
+
+class Posts(models.Model):
+    branche = models.ForeignKey(Branches, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title_image = models.ImageField(upload_to=user_directory_path, blank=True)
+    title = models.CharField(max_length=200)
+    main_text = models.TextField()
+    text = models.TextField(blank=True)
+    file = models.FileField(upload_to=user_directory_path, blank=True)
+    date = models.DateTimeField(default=timezone.now)
+    
+    def __str__(self):
+        return self.title
+
+class Images(models.Model):
+    posts = models.ForeignKey(Posts, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=user_directory_path, blank=True)
