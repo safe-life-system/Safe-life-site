@@ -1,0 +1,15 @@
+#id_title {
+    width: 420px;
+    height: 52px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border: black solid 2px;
+    padding-left: 20px;
+    font-size: 32px;
+    font-family: 'Roboto Light';
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+label {
+    display: none;
+}

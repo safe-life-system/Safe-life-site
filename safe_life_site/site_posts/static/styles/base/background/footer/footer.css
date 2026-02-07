@@ -1,8 +1,6 @@
 .footer {
-    position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
     height: 140px;
     display: flex;
     align-items: center;
@@ -10,4 +8,5 @@
     background-color: #090C15;
     width: 100%;
     z-index: 100;
+    margin-top: auto;
 }

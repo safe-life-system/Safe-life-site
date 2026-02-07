@@ -1,0 +1,9 @@
+.header-post_button {
+    width: 210px;
+    height: 52px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border: solid black 3px;
+    font-size: 24px;
+    font-family: 'Roboto Regular';
+}

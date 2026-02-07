@@ -1,0 +1,12 @@
+#id_header_image {
+    display: block;
+    font-size: 24px;
+    font-family: 'Roboto Regular';
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header_image-clear_id {
+    display: none;
+}

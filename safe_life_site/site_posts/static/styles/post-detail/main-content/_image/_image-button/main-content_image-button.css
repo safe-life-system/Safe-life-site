@@ -1,0 +1,14 @@
+#id_image, #id_image1, #id_image2 {
+    font-family: 'Roboto Regular';
+    font-size: 24px;
+    display: flex;
+}
+
+label {
+    display: none;
+}
+
+.main-content_image-button {
+    font-family: 'Roboto Regular';
+    margin-bottom: 30px;
+}

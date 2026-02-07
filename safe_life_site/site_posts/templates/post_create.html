@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    {% extends 'base.html' %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="header-post">
+                <div class="header-post_image header-post_image__color">
+                    {{ form.title_image }}<!--header-post_image-add-->
+                </div>
+                <div class="header-post_block-title">
+                    {{ form.title }}<!--header-post_title-field-->
+                    <div>
+                        <button class="header-post_button" formaction="#">Удалить</button>
+                        <button class="header-post_button" type="submit">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                {{ form.main_text }}<!--main-content_main-text-field-->
+                <div class="main-content_image">
+                    <div class="main-content_image-button">{{ form.branche }}</div><!--main-content_image-button-->
+                    
+                </div>
+                <div class="main-content_text-field">{{ form.text }}</div><!--main-content_text-field-->
+            </div>
+            <div class="block-site">
+                <div class="block-site_header">
+                    <p class="block-site_header-text">Скачать</p>
+                </div>
+                <div class="file_add">
+                    {{ form.file }}<!--file_add-file-->
+                </div>
+
+            </div>
+        </form>
+    {% endblock %}
+</body>
+</html>

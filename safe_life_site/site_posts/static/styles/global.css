@@ -84,3 +84,12 @@ input::-webkit-inner-spin-button {
 a {
     text-decoration: none;
 }
+
+html, body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}

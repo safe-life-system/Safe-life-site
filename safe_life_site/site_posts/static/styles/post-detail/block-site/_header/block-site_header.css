@@ -1,0 +1,7 @@
+.block-site_header {
+    height: 85px;
+    background-color: #282828;
+    padding-left: 85px;
+    display: flex;
+    align-items: center;
+}
