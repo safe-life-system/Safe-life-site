@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from site_users.views import user_regiistration
 from site_users.urls import urlpatterns
+from site_posts.urls import urlpatterns_posts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     path('forum/', TemplateView.as_view(template_name="error.html")),
     path('core/', TemplateView.as_view(template_name="error.html")),
     path('accaunt/', include(urlpatterns)),
+    path('post/', include(urlpatterns_posts))
 ]
