@@ -28,3 +28,9 @@ def posts(request, id):
     branche = get_object_or_404(Branches, pk = id)
     posts_data = Posts.objects.filter(branche__name_branche=branche).order_by('-date')
     return render(request, 'posts.html', {'posts': posts_data})
+
+#Функция вывода деталей поста
+def post_detail(request, pk):
+    post = get_object_or_404(Posts, pk=pk)
+    image = Images.objects.filter(posts_id=pk)
+    return render(request, "post_detail.html", {'post':post, 'image':image})
