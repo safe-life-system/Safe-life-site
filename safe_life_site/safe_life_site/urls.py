@@ -20,6 +20,14 @@ from django.views.generic import TemplateView
 from site_users.views import user_regiistration
 from site_users.urls import urlpatterns
 from site_posts.urls import urlpatterns_posts
+from django.contrib.sitemaps.views import sitemap
+from site_posts.sitemaps import PostsSitemap
+from django.conf import settings
+from django.conf.urls.static import static
+
+sitemaps = {
+    'posts': PostsSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +37,9 @@ urlpatterns = [
     path('forum/', TemplateView.as_view(template_name="error.html")),
     path('core/', TemplateView.as_view(template_name="error.html")),
     path('accaunt/', include(urlpatterns)),
-    path('post/', include(urlpatterns_posts))
+    path('post/', include(urlpatterns_posts)),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

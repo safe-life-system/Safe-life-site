@@ -3,6 +3,16 @@
 <head>
 
     {% extends 'base.html' %}
+    {% block title %}<title>Посты</title>{% endblock %}
+    {% block meta_description %}<meta name="description" content="Посты системы безопасной жизни - актуальные новости, статьи и обновления. Ознакомьтесь с последними публикациями и информацией о проекте.">{% endblock %}
+    
+    {% block society %}
+        <meta property="og:title" content="Посты">
+        <meta property="og:description" content="Посты системы безопасной жизни - актуальные новости, статьи и обновления. Ознакомьтесь с последними публикациями и информацией о проекте.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://safe-life-system.ru/posts/">
+        <meta property="og:site_name" content="Safe Life System">
+    {% endblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Посты</title>

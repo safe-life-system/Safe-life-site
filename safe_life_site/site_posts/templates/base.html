@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% block title %}<title>Safe life system</title>{% endblock %}
+    {% block society %}
+        <meta property="og:title" content="Safe life system">
+        <meta property="og:description" content="Система безопасной жизни - это проект по созданию безопасной среды для пользователей.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://safe-life-system.ru/">
+        <meta property="og:site_name" content="Safe Life System">
+    {% endblock %}
+    {% block meta_description %}<meta name="description" content="Система безопасной жизни - это проект по созданию безопасной среды для пользователей.">{% endblock %}
+    
 </head>
 <body class="background">
     <header class="header">

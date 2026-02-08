@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-tdezmm5#f9di+*q)-_-jf%gwblu+qc@+j#x+zqv)7fmx+y^ii=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "safe-life-site.ru"]
 
 MEDIA_URL = '/media/'
 
@@ -42,9 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'site_posts',
     'site_users',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'site_posts.context_processors.branches_processor'
             ],
         },
     },

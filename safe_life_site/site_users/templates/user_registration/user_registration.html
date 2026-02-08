@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
+{% block title %}<title>Регистрация аккаунта</title>{% endblock %}
+{% block meta_description %}<meta name="description" content="Регистрация нового аккаунта в системе безопасной жизни. Заполните форму для создания учетной записи и доступа к функциям.">{% endblock %}
+{% block society %}
+    <meta property="og:title" content="Регистрация аккаунта">
+    <meta property="og:description" content="Регистрация нового аккаунта в системе безопасной жизни. Заполните форму для создания учетной записи и доступа к функциям.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe-life-system.ru/user_registration/">
+    <meta property="og:site_name" content="Safe Life System">
+{% endblock %}
+<html lang="ru">
 <body>
     {% block content %}
         <div class="login-block login-block__position">
