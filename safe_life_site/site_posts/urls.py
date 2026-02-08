@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic import TemplateView
 from . import views
 
 urlpatterns_posts = [
-    path('post_create/', views.add_post, name='post_create')
+    path('post_create/', views.add_post, name='post_create'), 
+    path('posts/<int:id>/', views.posts, name='posts_data')
 ]
