@@ -20,6 +20,8 @@ from django.views.generic import TemplateView
 from site_users.views import user_regiistration
 from site_users.urls import urlpatterns
 from site_posts.urls import urlpatterns_posts
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,3 +33,6 @@ urlpatterns = [
     path('accaunt/', include(urlpatterns)),
     path('post/', include(urlpatterns_posts))
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
