@@ -1,0 +1,7 @@
+.post_image {
+    width:280px;
+    height:280px;
+    object-fit: cover;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}

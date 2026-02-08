@@ -40,3 +40,13 @@
 @import url('post-detail/main-content/_text-field/main-content_text-field.css');
 @import url('post-detail/block-site/_add/_add-file/file_add-file.css');
 @import url('post-detail/block-site/_add/file_add.css');
+
+@import url('posts/posts/posts.css');
+@import url('posts/posts/_title/posts_title.css');
+@import url('posts/posts/post/post.css');
+@import url('posts/posts/post/_content/post_content.css');
+@import url('posts/posts/post/_content-title/post_content-title.css');
+@import url('posts/posts/post/_date/post_date.css');
+@import url('posts/posts/post/_image/post_image.css');
+@import url('posts/posts/post/_main-text/post_main-text.css');
+@import url('posts/posts/_select/posts_select.css');

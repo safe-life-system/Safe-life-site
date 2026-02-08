@@ -1,0 +1,10 @@
+#id_filter {
+    height: 55px;
+    font-size: 21px;
+    border-radius: 12px;
+    padding-left: 20px;
+}
+
+.errorlist {
+    display: none;
+}

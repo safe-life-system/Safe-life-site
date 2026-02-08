@@ -1,5 +1,6 @@
-.background-text_text {
+.post_date {
     font-size: 20px;
     font-family: 'Roboto Light', sans-serif;
-    color: #ffff;
+    color: #fff;
+    margin-top: 5px;
 }

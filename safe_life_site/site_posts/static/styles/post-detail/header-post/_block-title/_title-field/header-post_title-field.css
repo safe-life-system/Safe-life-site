@@ -6,7 +6,7 @@
     border: black solid 2px;
     padding-left: 20px;
     font-size: 32px;
-    font-family: 'Roboto Light';
+    font-family: 'Roboto Light', sans-serif;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
