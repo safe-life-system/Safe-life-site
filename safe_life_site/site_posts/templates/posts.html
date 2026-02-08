@@ -18,7 +18,7 @@
                         <img src="{{ post.title_image.url }}" alt="" class="post_image">
                     {% endif %}
                     <div class="post_content">
-                        <a href="#" class="post_content-title">{{ post.title|linebreaksbr }}</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="post_content-title">{{ post.title|linebreaksbr }}</a>
                         <p class="post_date">{{ post.date }}</p>
                         <p class="post_main-text">{{ post.main_text|linebreaksbr }}</p>
                     </div>

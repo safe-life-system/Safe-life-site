@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% extends 'base.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block content %}
+
+        <div class="header-post">
+            {% if post.title_image %}
+                <img src="/media/{{ post.title_image }}" alt="" class="header-post_image">
+            {% endif %}
+            {% if not post.title_image %}
+                <div class="header-post_image header-post_image__color"></div>
+            {% endif %}
+            <div class="header-post_block-title">
+                <div>
+                    <p class="header-post_title">{{ post.title }}</p>
+                    <p class="header-post_date">{{ post.date }}</p>
+                </div>
+                <div>
+                    <p class="header-post_auther">Автор: {{ post.author }}</p>
+                    {% if user == post.author %}
+                        <a href="#" class="header-post_edit">Редактировать</a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        <div class="main-content">
+            <p class="main-content_text">{{ post.main_text|linebreaksbr }}</p>
+            {% if image %}
+                <div class="image-menu">
+                    {% for image in image %}
+                        <img src="{{ image.image.url }}" alt="" class="image-menu_images">
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if post.text %}
+                <div class="background-text">
+                    <p class="background-text_text">{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endif %}
+        </div>
+        {% if post.file %}
+            <div class="block-site">
+                <div class="block-site_header">
+                    <p class="block-site_header-text">Скачать</p>
+                </div>
+                <a href="/media/{{ post.file }}" download><button class="block-site_button">Скачать</button></a>
+            </div>
+        {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>
