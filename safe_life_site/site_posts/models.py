@@ -3,7 +3,10 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 def user_directory_path(instance, filename):
-    return f'{instance.branche.name_branche}/{instance.author.username}/%Y/%m/%d/{filename}'
+    try:
+        return f'{instance.branche.name_branche}/{instance.author.username}/{timezone.now().date()}/{filename}'
+    except:
+        return f'{instance.posts.branche.name_branche}/{instance.posts.author.username}/{timezone.now().date()}/{filename}'
 
 # Create your models here.
 class Branches(models.Model):
