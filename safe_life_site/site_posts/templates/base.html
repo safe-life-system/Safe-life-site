@@ -14,8 +14,9 @@
             <li class="header-menu__dropdown">
                 <a class="header-menu__text">Программы</a>
                 <ul class="header-menu__sub-menu">
-                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="/manager-passwords/">Manager-passwords</a></li>
-                    <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="/messenger/">Messenger</a></li>
+                    {% for branche in branches %}
+                        <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="{% url 'posts_data' id=branche.id %}" >{{ branche.name_branche }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
             <li><a href="/core/" class="header-menu__text">Ядро</a></li>
