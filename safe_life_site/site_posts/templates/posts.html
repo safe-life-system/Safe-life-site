@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    {% extends 'base.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посты</title>
+</head>
+<body>
+    {% block content %}
+        <div class="posts">
+            <p class="posts_title">Посты:</p>
+
+            {% for post in posts %}
+                <div class="post">
+                    {% if post.title_image %}
+                        <img src="{{ post.title_image.url }}" alt="" class="post_image">
+                    {% endif %}
+                    <div class="post_content">
+                        <a href="#" class="post_content-title">{{ post.title|linebreaksbr }}</a>
+                        <p class="post_date">{{ post.date }}</p>
+                        <p class="post_main-text">{{ post.main_text|linebreaksbr }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+</body>
+</html>
