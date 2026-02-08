@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
 from .models import Branches, Posts, Images
 from .form import PostImageDawnlod, PostEdit
 from django.utils import timezone
 
 # Create your views here.
-
 #Функция добавения поста
 def add_post(request):
     if request.method == "POST":
@@ -15,7 +15,16 @@ def add_post(request):
             form.author = request.user
             form.date = timezone.now()
             form.save()
+            for file in request.FILES.getlist('image'):
+                Images.objects.create(posts=form, image=file)
             return redirect("/")
     else:
         form = PostEdit()
-    return render(request, 'post_create.html', {'form':form})
+        form_image = PostImageDawnlod()
+    return render(request, 'post_create.html', {'form':form, 'form_image':form_image})
+
+#Функция вывода постов
+def posts(request, id):
+    branche = get_object_or_404(Branches, pk = id)
+    posts_data = Posts.objects.filter(branche__name_branche=branche).order_by('-date')
+    return render(request, 'posts.html', {'posts': posts_data})
