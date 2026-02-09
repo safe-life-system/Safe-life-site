@@ -3,4 +3,27 @@
     font-size: 20px;
     color: #FFFFFF;
     text-indent: 1.5em;
+    line-height: 1.6;
+    word-spacing: 0;
+    text-align: justify;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .main-page-content__text {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .main-page-content__text {
+        font-size: 16px;
+        text-indent: 1em;
+        line-height: 1.8;
+        word-spacing: 0;
+        letter-spacing: 0.3px;
+        padding: 0 16px;
+    }
 }
