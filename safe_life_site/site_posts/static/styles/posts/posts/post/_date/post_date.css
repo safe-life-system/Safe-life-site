@@ -4,3 +4,16 @@
     color: #fff;
     margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+    .post_date {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post_date {
+        font-size: 14px;
+        margin-top: 3px;
+    }
+}

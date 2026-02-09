@@ -3,3 +3,21 @@
     font-family: 'Roboto Regular', sans-serif;
     color: #fff;
 }
+
+@media (max-width: 1024px) {
+    .post_content-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post_content-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post_content-title {
+        font-size: 22px;
+    }
+}

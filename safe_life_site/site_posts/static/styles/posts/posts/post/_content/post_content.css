@@ -1,3 +1,15 @@
 .post_content {
     padding-left: 40px;
 }
+
+@media (max-width: 768px) {
+    .post_content {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post_content {
+        padding-left: 15px;
+    }
+}

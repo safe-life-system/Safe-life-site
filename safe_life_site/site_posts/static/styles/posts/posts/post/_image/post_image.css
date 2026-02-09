@@ -1,7 +1,21 @@
 .post_image {
-    width:280px;
-    height:280px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .post_image {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post_image {
+        width: 160px;
+        height: 160px;
+    }
 }
