@@ -5,6 +5,22 @@
     padding-left: 20px;
 }
 
+@media (max-width: 768px) {
+    #id_filter {
+        height: 48px;
+        font-size: 18px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #id_filter {
+        height: 40px;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+}
+
 .errorlist {
     display: none;
 }
