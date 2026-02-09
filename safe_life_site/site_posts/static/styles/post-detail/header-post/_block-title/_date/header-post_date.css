@@ -2,4 +2,19 @@
     color: #fff;
     font-size: 16px;
     font-family: 'Roboto Light', sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .header-post_date {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-post_date {
+        font-size: 12px;
+    }
 }

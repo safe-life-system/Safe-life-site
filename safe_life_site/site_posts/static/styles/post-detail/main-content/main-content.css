@@ -1,6 +1,27 @@
 .main-content {
     background-color: #3B4155;
-    padding: 20px 85px 20px 85px;
-    padding-bottom: 20px;
+    padding: 20px 85px;
     font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.6; /* удобный межстрочный интервал */
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px 40px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: justify; /* растягиваем текст по ширине */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px 15px;
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: justify; /* растягиваем текст на весь экран */
+    }
 }

@@ -1,12 +1,15 @@
 #id_text {
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 360px;
-    border: solid black 2px;
+    width: 100%;                         /* адаптивная ширина */
+    max-width: 100%;                      /* не превышает ширину родителя */
+    min-height: 200px;                    /* минимальная высота на маленьких экранах */
+    height: auto;                         /* подстраивается под контент */
+    border: 2px solid black;
     border-radius: 10px;
     background-color: #D9D9D9;
-    font-size: 20px;
+    font-size: clamp(14px, 1.5vw, 20px);  /* адаптивный размер текста */
     font-family: 'Roboto Light', sans-serif;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 20px;                        /* паддинг одинаковый со всех сторон */
+    box-sizing: border-box;               /* чтобы padding не ломал ширину */
+    overflow-wrap: break-word;            /* перенос длинных слов */
+    line-height: 1.5;                     /* читаемость текста */
 }

@@ -1,4 +1,9 @@
 .main-content_image {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    width: 100%;              /* адаптивная ширина */
+    height: auto;             /* высота подстраивается под ширину */
+    max-height: 500px;        /* ограничение максимальной высоты при больших экранах */
+    margin: 25px 0;           /* верхний и нижний отступ */
+    border-radius: 10px;      /* если нужно скругление */
+    object-fit: contain;      /* сохраняет пропорции изображения */
+    display: block;           /* убирает лишние пробелы под img */
 }

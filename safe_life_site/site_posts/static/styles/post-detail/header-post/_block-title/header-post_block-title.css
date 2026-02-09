@@ -1,9 +1,48 @@
 .header-post_block-title {
     height: 90px;
     background-color: #262A37;
-    padding: 0 85px 0 85px;
+    padding: 0 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 3px;
+    box-sizing: border-box;
+    gap: 10px; /* отступ между элементами */
+}
+
+/* Заголовок может растягиваться */
+.header-post_block-title .header-post_title {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Автор, дата и кнопка редактирования — не растягиваем */
+.header-post_block-title .header-post_auther,
+.header-post_block-title .header-post_date,
+.header-post_block-title .header-post_edit {
+    flex: 0 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+    .header-post_block-title {
+        height: auto;
+        padding: 10px 5%;
+        gap: 5px;
+    }
+
+    .header-post_block-title > * {
+        font-size: 0.9rem; /* уменьшаем текст на маленьких экранах */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-post_block-title > * {
+        font-size: 0.8rem;
+    }
 }

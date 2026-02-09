@@ -3,4 +3,22 @@
     color: #fff;
     font-family: 'Roboto Regular', sans-serif;
     height: 42px;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .header-post_title {
+        font-size: 28px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-post_title {
+        font-size: 22px;
+        height: auto;
+    }
 }

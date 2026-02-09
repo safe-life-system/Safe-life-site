@@ -1,3 +1,7 @@
 .image-menu {
-    height: 100%;
+    width: 100%;
+    height: auto;  
+    max-height: 100vh;
+    display: block;
+    object-fit: contain;
 }

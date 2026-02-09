@@ -1,5 +1,9 @@
 .image-menu_images {
-    height: 300px;
+    width: 100%;            /* адаптивная ширина */
+    height: auto;           /* высота подстраивается пропорционально */
+    max-height: 300px;      /* максимум 300px, как у тебя было */
     border-radius: 10px;
     margin-top: 20px;
+    object-fit: contain;    /* сохраняет пропорции изображения */
+    display: block;         /* убирает лишние пробелы под img */
 }

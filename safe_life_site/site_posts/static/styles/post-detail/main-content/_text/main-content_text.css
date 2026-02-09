@@ -1,5 +1,7 @@
 .main-content_text {
-    color: #fff;
-    font-size: 20px;
+    color: #ffffff;
     font-family: 'Roboto Light', sans-serif;
+    font-size: clamp(14px, 1.8vw, 20px); /* адаптивный размер текста */
+    line-height: 1.5;                     /* для лучшей читаемости */
+    word-break: break-word;                /* перенос длинных слов */
 }

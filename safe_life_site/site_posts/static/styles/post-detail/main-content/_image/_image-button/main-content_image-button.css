@@ -1,14 +1,30 @@
-#id_image, #id_image1, #id_image2 {
-    font-family: 'Roboto Regular';
-    font-size: 24px;
-    display: flex;
+/* Блоки с изображениями и текстом */
+#id_image,
+#id_image1,
+#id_image2 {
+    display: flex;                       /* гибкое расположение элементов */
+    flex-direction: column;              /* элементы располагаются вертикально */
+    align-items: center;                 /* центрирование по горизонтали */
+    width: 100%;                         /* адаптивная ширина */
+    max-width: 100%;                      /* не превышает ширину родителя */
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: clamp(16px, 2vw, 24px);   /* адаптивный размер текста */
+    margin-bottom: 20px;                 /* отступ между блоками */
+    box-sizing: border-box;
 }
 
+/* Скрываем стандартные label */
 label {
     display: none;
 }
 
+/* Кнопки под изображениями */
 .main-content_image-button {
-    font-family: 'Roboto Regular';
-    margin-bottom: 30px;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);  /* адаптивный размер текста кнопки */
+    padding: 10px 20px;                   /* паддинги кнопки */
+    margin-bottom: 30px;                  /* отступ снизу */
+    cursor: pointer;                      /* курсор при наведении */
+    border-radius: 5px;                   /* скругление кнопки */
+    box-sizing: border-box;
 }

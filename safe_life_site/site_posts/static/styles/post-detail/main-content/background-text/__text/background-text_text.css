@@ -1,12 +1,14 @@
 .background-text_text {
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px); /* адаптивный размер текста от 14 до 20px */
     font-family: 'Roboto Light', sans-serif;
-    color: #ffff;
+    color: #ffffff;
+    line-height: 1.5;                 /* улучшает читаемость */
+    word-break: break-word;            /* перенос длинных слов */
 }
 
 .background-text_text a {
     text-decoration: underline;
-    word-break: break-word;
+    word-break: break-word;            /* чтобы ссылки не ломали верстку */
 }
 
 .post-content a:hover {
