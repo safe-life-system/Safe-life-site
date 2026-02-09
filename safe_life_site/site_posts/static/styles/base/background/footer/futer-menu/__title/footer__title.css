@@ -4,3 +4,17 @@
     line-height: auto;
     color: #FFFFFF;
 }
+
+/* Планшеты */
+@media (max-width: 768px) {
+    .footer__title {
+        font-size: 24px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .footer__title {
+        font-size: 18px;
+    }
+}

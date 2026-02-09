@@ -6,3 +6,24 @@
     opacity: 0.7;
     list-style: none;
 }
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .footer-menu__text {
+        font-size: 16px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .footer-menu__text {
+        font-size: 14px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .footer-menu__text {
+        font-size: 22px;
+    }
+}

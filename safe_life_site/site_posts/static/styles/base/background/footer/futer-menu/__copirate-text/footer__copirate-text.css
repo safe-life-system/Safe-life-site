@@ -5,3 +5,17 @@
     color: #D3D3D3;
     opacity: 0.5;
 }
+
+/* Tablet devices */
+@media (max-width: 768px) {
+    .footer__copirate-text {
+        font-size: 14px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .footer__copirate-text {
+        font-size: 12px;
+    }
+}

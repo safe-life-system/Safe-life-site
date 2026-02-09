@@ -1,17 +1,38 @@
 .header-menu__text {
     font-family: 'Inter', sans-serif;
     color: #E5E7EB;
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
 }
 
 .header-menu__text_size_big-size {
-    font-size: 32px;
+    font-size: clamp(24px, 5vw, 32px);
 }
 
 .header-menu__text_size_small-size {
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
 }
 
 .header-menu__text_margin_top {
-    margin-top: 10px;
+    margin-top: clamp(8px, 2vw, 10px);
+}
+
+/* Optional: Media queries for fine-tuning */
+@media (max-width: 768px) {
+    .header-menu__text {
+        font-size: clamp(16px, 3.5vw, 20px);
+    }
+    
+    .header-menu__text_size_big-size {
+        font-size: clamp(20px, 4.5vw, 28px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-menu__text {
+        font-size: clamp(14px, 3vw, 18px);
+    }
+    
+    .header-menu__text_size_big-size {
+        font-size: clamp(18px, 4vw, 24px);
+    }
 }

@@ -3,4 +3,18 @@
     gap: 45px;
     list-style: none;
     align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .header-menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-menu {
+        gap: 10px;
+    }
 }

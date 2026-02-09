@@ -2,10 +2,30 @@
     width: 210px;
     position: absolute;
     background-color: #262A37;
-    padding-left: 24px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    border: #262A37 1px solid;
+    padding: 0 30px 10px 24px;
+    border: 1px solid #262A37;
     gap: 10px;
     display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .header-menu__sub-menu {
+        width: 180px;
+        padding: 0 20px 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-menu__sub-menu {
+        width: 160px;
+        padding: 0 15px 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-menu__sub-menu {
+        width: 140px;
+        padding: 0 12px 6px 12px;
+    }
 }

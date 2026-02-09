@@ -6,4 +6,22 @@
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .content {
+        min-height: calc(100vh - 180px);
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .content {
+        min-height: calc(100vh - 150px);
+        padding: 0 12px;
+    }
 }

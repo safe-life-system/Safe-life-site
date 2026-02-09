@@ -5,3 +5,11 @@
 .header-menu__dropdown:hover .header-menu__sub-menu {
     display: block;
 }
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    /* Optional: Change hover behavior on touch devices */
+    .header-menu__dropdown:hover .header-menu__sub-menu {
+        display: block;
+    }
+}
