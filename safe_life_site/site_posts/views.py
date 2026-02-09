@@ -34,3 +34,20 @@ def post_detail(request, pk):
     post = get_object_or_404(Posts, pk=pk)
     image = Images.objects.filter(posts_id=pk)
     return render(request, "post_detail.html", {'post':post, 'image':image})
+
+def post_edit(request, id):
+    post = get_object_or_404(Posts, pk=id)
+    if request.method == "POST":
+        form_post = PostEdit(request.POST, request.FILES, instance=post)
+        form_image = PostImageDawnlod(request.POST, request.FILES, instance=post)
+        if form_post.is_valid() and form_image.is_valid():
+            form = form_post.save(commit=False)
+            form.author = request.user
+            form.date = timezone.now()
+            form.save()
+            for file in request.FILES.getlist('image'):
+                Images.objects.create(posts=form, image=file)
+            return redirect('/')
+    form = PostEdit(instance=post)
+    form_image = PostImageDawnlod(instance=post)
+    return render(request, 'post_create.html', {'form':form, 'form_image':form_image})
