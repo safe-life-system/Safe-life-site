@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% block title %}<title>Ошибка - страница не существует</title>{% endblock %}
+{% block meta_description %}<meta name="description" content="Страница не найдена - ошибка 404. Страница, которую вы ищете, не существует или была удалена.">{% endblock %}
+{% block society %}
+    <meta property="og:title" content="Ошибка - страница не существует">
+    <meta property="og:description" content="Страница не найдена - ошибка 404. Страница, которую вы ищете, не существует или была удалена.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe-life-system.ru/error/">
+    <meta property="og:site_name" content="Safe Life System">
+{% endblock %}
 {% block content %}
 <p class="main-page-content__text">Страница еще не существует</p>
 {% endblock %}

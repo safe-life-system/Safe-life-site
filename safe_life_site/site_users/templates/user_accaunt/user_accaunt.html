@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% block title %}<title>Личный кабинет</title>{% endblock %}
+{% block meta_description %}<meta name="description" content="Личный кабинет пользователя системы безопасной жизни. Управляйте своим аккаунтом, просматривайте информацию и получайте доступ к функциям.">{% endblock %}
+{% block society %}
+        <meta property="og:title" content="Личный кабинет">
+        <meta property="og:description" content="Личный кабинет пользователя системы безопасной жизни. Управляйте своим аккаунтом, просматривайте информацию и получайте доступ к функциям.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://safe-life-system.ru/user_accaunt/">
+        <meta property="og:site_name" content="Safe Life System">
+    {% endblock %}
 {% block content %}
     <div class="user-accaunt">
         <h1 class="user-accaunt__user-name">{{ user.username }}</h1>

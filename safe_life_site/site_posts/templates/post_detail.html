@@ -2,6 +2,16 @@
 <html lang="ru">
 <head>
     {% extends 'base.html' %}
+    {% block title %}<title>{{ post.title }}</title>{% endblock %}
+    {% block meta_description %}<meta name="description" content="{{ post.title }} - {{ post.main_text|truncatechars:150 }}">{% endblock %}
+    {% block society %}
+        <meta property="og:title" content="{{ post.title }}">
+        <meta property="og:description" content="{{ post.main_text|truncatechars:150 }}">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://safe-life-system.ru/media/{{ post.title_image }}">
+        <meta property="og:url" content="https://safe-life-system.ru/post_detail/{{ post.id }}/">
+        <meta property="og:site_name" content="Safe Life System">
+    {% endblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
