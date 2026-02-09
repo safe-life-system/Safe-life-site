@@ -1,3 +1,15 @@
 .login-block__position {
-    margin-top: calc(0% + 60px);
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .login-block__position {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-block__position {
+        margin-top: 30px;
+    }
 }

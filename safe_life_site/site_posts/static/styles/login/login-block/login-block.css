@@ -3,11 +3,28 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 440px;
+    width: 90%;
+    max-width: 440px;
     height: 100%;
     padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 50px;
     font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .login-block {
+        width: 95%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .login-block {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
 }
