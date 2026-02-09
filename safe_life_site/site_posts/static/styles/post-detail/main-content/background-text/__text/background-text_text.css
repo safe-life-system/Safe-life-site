@@ -3,3 +3,13 @@
     font-family: 'Roboto Light', sans-serif;
     color: #ffff;
 }
+
+.background-text_text a {
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.post-content a:hover {
+    color: #0c47a1;
+    text-decoration: none;
+}

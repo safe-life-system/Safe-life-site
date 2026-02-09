@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="main-content">
-            <p class="main-content_text">{{ post.main_text|linebreaksbr }}</p>
+            <p class="main-content_text">{{ post.main_text|linebreaksbr|urlize }}</p>
             {% if image %}
                 <div class="image-menu">
                     {% for image in image %}
@@ -51,7 +51,7 @@
 
             {% if post.text %}
                 <div class="background-text">
-                    <p class="background-text_text">{{ post.text|linebreaksbr }}</p>
+                    <p class="background-text_text">{{ post.text|linebreaksbr|urlize }}</p>
                 </div>
             {% endif %}
         </div>
