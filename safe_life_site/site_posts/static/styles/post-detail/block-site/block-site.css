@@ -1,5 +1,6 @@
 .block-site {
     background-color: #3B4155;
-    height: 100%;
-    padding-bottom: 40px;
+    height: auto;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
 }

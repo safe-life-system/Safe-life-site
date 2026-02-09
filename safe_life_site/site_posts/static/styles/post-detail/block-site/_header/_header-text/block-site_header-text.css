@@ -1,5 +1,6 @@
 .block-site_header-text {
     color: #fff;
-    font-size: 48px;
-    font-family: 'Roboto regular', sans-serif;
+    font-size: clamp(24px, 4vw, 48px);
+    font-family: 'Roboto Regular', sans-serif;
+    line-height: 1.2;
 }

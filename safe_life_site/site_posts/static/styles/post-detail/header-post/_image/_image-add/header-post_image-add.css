@@ -1,8 +1,10 @@
 #id_header_image {
     display: block;
-    font-size: 24px;
+    font-size: calc(16px + 1vw);
     font-family: 'Roboto Regular', sans-serif;
-    width: 100px;
+    width: 50%;
+    max-width: 100px;
+    min-width: 50px;
     margin-left: auto;
     margin-right: auto;
 }

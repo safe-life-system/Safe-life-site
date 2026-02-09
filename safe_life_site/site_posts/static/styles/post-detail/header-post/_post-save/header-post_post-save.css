@@ -1,9 +1,11 @@
 .header-post_button {
-    width: 210px;
+    width: 100%;
+    max-width: 210px;
     height: 52px;
     background-color: #D9D9D9;
     border-radius: 10px;
     border: solid black 3px;
-    font-size: 24px;
+    font-size: calc(16px + 1vw);
     font-family: 'Roboto Regular', sans-serif;
+    box-sizing: border-box;
 }

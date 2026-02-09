@@ -1,4 +1,5 @@
 .file_add {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 5vh;
+    box-sizing: border-box;
 }

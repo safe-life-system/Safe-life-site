@@ -1,9 +1,11 @@
 #id_file {
-    font-size: 40px;
-    font-family: 'Roboto Regular';
-    width: 165px;
-    text-align:center;
+    font-size: clamp(20px, 3vw, 40px);
+    font-family: 'Roboto Regular', sans-serif;
+    width: 50%;
+    max-width: 165px;
+    min-width: 100px;
+    text-align: center;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto; /* Выровнять по центру горизонтально */
+    box-sizing: border-box;
 }

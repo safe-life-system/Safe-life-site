@@ -1,7 +1,9 @@
 .header-post_image__color {
     background-color: #fff;
-    height: 440px;
-    padding-top: 192px;
-    padding-bottom: 191px;
+    height: auto;
+    min-height: 440px;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
     text-align: center;
+    box-sizing: border-box;
 }

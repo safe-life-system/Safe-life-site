@@ -1,5 +1,6 @@
 .block-site_form {
-    padding-left: 85px;
-    padding-right: 85px;
-    margin-top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 2vh;
+    box-sizing: border-box;
 }
