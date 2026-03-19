@@ -12,9 +12,13 @@ def user_directory_path(instance, filename):
 # Create your models here.
 class Branches(models.Model):
     name_branche = models.CharField(max_length=50)
+    category = models.CharField(max_length=100)
     
     def __str__(self):
         return self.name_branche
+    
+    def get_absolute_url(self):
+        return reverse('posts_data', kwargs={'id': self.pk})
 
 class Posts(models.Model):
     branche = models.ForeignKey(Branches, on_delete=models.CASCADE)
