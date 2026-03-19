@@ -24,7 +24,19 @@
                 <a class="header-menu__text">Программы</a>
                 <ul class="header-menu__sub-menu">
                     {% for branche in branches %}
-                        <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="{% url 'posts_data' id=branche.id %}" >{{ branche.name_branche }}</a></li>
+                        {% if branche.category == "1" %}
+                            <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="{{ branche.get_absolute_url }}" >{{ branche.name_branche }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="header-menu__dropdown">
+                <a class="header-menu__text">Уроки</a>
+                <ul class="header-menu__sub-menu">
+                    {% for branche in branches %}
+                        {% if branche.category == "2" %}
+                            <li class="header-menu__text header-menu__text_size_small-size header-menu__text_margin_top"><a href="{{ branche.get_absolute_url }}" >{{ branche.name_branche }}</a></li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </li>
