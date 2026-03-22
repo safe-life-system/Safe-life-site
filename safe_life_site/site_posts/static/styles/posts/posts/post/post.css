@@ -6,6 +6,7 @@
     background-color: #3B4155;
     padding-right: 100px;
     border-radius: 9px;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {

@@ -50,3 +50,5 @@
 @import url('posts/posts/post/_image/post_image.css');
 @import url('posts/posts/post/_main-text/post_main-text.css');
 @import url('posts/posts/_select/posts_select.css');
+
+@import url('pygments.css');
