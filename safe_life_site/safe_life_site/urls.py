@@ -21,12 +21,13 @@ from site_users.views import user_regiistration
 from site_users.urls import urlpatterns
 from site_posts.urls import urlpatterns_posts
 from django.contrib.sitemaps.views import sitemap
-from site_posts.sitemaps import PostsSitemap
+from site_posts.sitemaps import PostsSitemap, BranchesSitemap
 from django.conf import settings
 from django.conf.urls.static import static
 
 sitemaps = {
     'posts': PostsSitemap,
+    'branches': BranchesSitemap,
 }
 
 urlpatterns = [
@@ -39,6 +40,7 @@ urlpatterns = [
     path('accaunt/', include(urlpatterns)),
     path('post/', include(urlpatterns_posts)),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path('yandex_1c911a0f428c126a.html', TemplateView.as_view(template_name="yandex_1c911a0f428c126a.html"))
 ]
 
 if settings.DEBUG:
