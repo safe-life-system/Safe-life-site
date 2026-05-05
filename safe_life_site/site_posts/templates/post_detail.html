@@ -33,7 +33,7 @@
                 <div>
                     <p class="header-post_auther">Автор: {{ post.author }}</p>
                     {% if user == post.author %}
-                        <a href="{% url 'post_edit' id=post.id %}" class="header-post_edit">Редактировать</a>
+                        <a href="{% url 'post_edit' slug=post.slug %}" class="header-post_edit">Редактировать</a>
                     {% endif %}
                 </div>
 
