@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
 
-    {% extends 'base.html' %}
-    {% block title %}<title>Посты</title>{% endblock %}
-    {% block meta_description %}<meta name="description" content="Посты системы безопасной жизни - актуальные новости, статьи и обновления. Ознакомьтесь с последними публикациями и информацией о проекте.">{% endblock %}
+{% extends 'base.html' %}
+{% block title %}<title>{{ branch.name_branch }}</title>{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Раздел {{ branch.name_branch }} на Safe Life System: статьи, заметки и обновления проекта.">
+{% endblock %}
     
-    {% block society %}
-        <meta property="og:title" content="Посты">
-        <meta property="og:description" content="Посты системы безопасной жизни - актуальные новости, статьи и обновления. Ознакомьтесь с последними публикациями и информацией о проекте.">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://safe-life-system.ru/posts/">
-        <meta property="og:site_name" content="Safe Life System">
-    {% endblock %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Посты</title>
-</head>
-<body>
-    {% block content %}
-        <div class="posts">
-            <p class="posts_title">Посты:</p>
+{% block society %}
+    <meta property="og:title" content="{{ branche }}">
+    <meta property="og:description" content="Посты системы безопасной жизни - актуальные новости, статьи и обновления. Ознакомьтесь с последними публикациями и информацией о проекте.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.safe-life-system.ru/posts/">
+    <meta property="og:site_name" content="Safe Life System">
+{% endblock %}
+{% block content %}
+    <div class="posts">
+        <h1 class="posts_title">{{ branche }}:</h1>
 
-            {% for post in posts %}
-                <div class="post">
-                    {% if post.title_image %}
-                        <img src="{{ post.title_image.url }}" alt="" class="post_image">
-                    {% endif %}
-                    <div class="post_content">
-                        <a href="{{ post.get_absolute_url }}" class="post_content-title">{{ post.title|linebreaksbr }}</a>
-                        <p class="post_date">{{ post.date }}</p>
-                        <span class="post_main-text">{{ post.main_text|safe|linebreaksbr }}</span>
-                    </div>
+        {% for post in posts %}
+            <div class="post">
+                {% if post.title_image %}
+                    <img src="{{ post.title_image.url }}" alt="{{ post.title }}" class="post_image">
+                {% endif %}
+                <div class="post_content">
+                    <a href="{{ post.get_absolute_url }}" class="post_content-title">{{ post.title|linebreaksbr }}</a>
+                    <p class="post_date">{{ post.date }}</p>
+                    <span class="post_main-text">{{ post.main_text|safe|linebreaksbr }}</span>
                 </div>
-            {% endfor %}
-        </div>
-    {% endblock %}
-</body>
-</html>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

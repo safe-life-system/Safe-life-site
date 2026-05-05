@@ -1,69 +1,63 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    {% extends 'base.html' %}
-    {% block title %}<title>{{ post.title }}</title>{% endblock %}
-    {% block meta_description %}<meta name="description" content="{{ post.title }} - {{ post.main_text|truncatechars:150 }}">{% endblock %}
-    {% block society %}
-        <meta property="og:title" content="{{ post.title }}">
-        <meta property="og:description" content="{{ post.main_text|truncatechars:150 }}">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://safe-life-system.ru/media/{{ post.title_image }}">
-        <meta property="og:url" content="https://safe-life-system.ru/post_detail/{{ post.id }}/">
-        <meta property="og:site_name" content="Safe Life System">
-    {% endblock %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    {% block content %}
 
-        <div class="header-post">
-            {% if post.title_image %}
-                <img src="/media/{{ post.title_image }}" alt="" class="header-post_image">
-            {% endif %}
-            {% if not post.title_image %}
+{% extends 'base.html' %}
+{% block title %}<title>{{ post.title }} | Safe Life System</title>{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ post.title }} - {{ post.main_text|truncatechars:150 }}">{% endblock %}
+{% block society %}
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:description" content="{{ post.main_text|truncatechars:150 }}">
+    <meta property="og:type" content="website">
+    {% if post.title_image %}
+        <meta property="og:image" content="https://www.safe-life-site.ru{{ post.title_image.url }}">
+    {% endif %}
+    <meta property="og:url" content="https://www.safe-life-system.ru/post_detail/{{ post.get_absolute_url }}/">
+    <meta property="og:site_name" content="Safe Life System">
+{% endblock %}
+{% block content %}
+
+    <div class="header-post">
+        {% if post.title_image %}
+            <img src="/media/{{ post.title_image }}" alt="" class="header-post_image">
+        {% endif %}
+        {% if not post.title_image %}
                 <div class="header-post_image header-post_image__color"></div>
-            {% endif %}
-            <div class="header-post_block-title">
-                <div>
-                    <p class="header-post_title">{{ post.title }}</p>
-                    <p class="header-post_date">{{ post.date }}</p>
-                </div>
-                <div>
-                    <p class="header-post_auther">Автор: {{ post.author }}</p>
-                    {% if user == post.author %}
-                        <a href="{% url 'post_edit' slug=post.slug %}" class="header-post_edit">Редактировать</a>
-                    {% endif %}
-                </div>
-
+        {% endif %}
+        <div class="header-post_block-title">
+            <div>
+                <h1 class="header-post_title">{{ post.title }}</h1>
+                <p class="header-post_date">{{ post.date }}</p>
             </div>
-        </div>
-        <div class="main-content">
-            <span class="main-content_text">{{ post.main_text|safe|linebreaksbr }}</span>
-            {% if image %}
-                <div class="image-menu">
-                    {% for image in image %}
-                        <img src="{{ image.image.url }}" alt="" class="image-menu_images">
-                    {% endfor %}
-                </div>
-            {% endif %}
+            <div>
+                <p class="header-post_auther">Автор: {{ post.author }}</p>
+                {% if user == post.author %}
+                    <a href="{% url 'post_edit' slug=post.slug %}" class="header-post_edit">Редактировать</a>
+                {% endif %}
+            </div>
 
-            {% if post.text %}
-                <div class="background-text">
-                    <span class="background-text_text">{{ post.text|safe|linebreaksbr }}</span>
-                </div>
-            {% endif %}
         </div>
-        {% if post.file %}
-            <div class="block-site">
-                <div class="block-site_header">
-                    <p class="block-site_header-text">Скачать</p>
-                </div>
-                <a href="/media/{{ post.file }}" download><button class="block-site_button">Скачать</button></a>
+    </div>
+    <div class="main-content">
+        <span class="main-content_text">{{ post.main_text|safe|linebreaksbr }}</span>
+        {% if image %}
+            <div class="image-menu">
+                {% for image in image %}
+                    <img src="{{ image.image.url }}" alt="" class="image-menu_images">
+                {% endfor %}
             </div>
         {% endif %}
+
+        {% if post.text %}
+            <div class="background-text">
+                <span class="background-text_text">{{ post.text|safe|linebreaksbr }}</span>
+            </div>
+        {% endif %}
+    </div>
+    {% if post.file %}
+        <div class="block-site">
+            <div class="block-site_header">
+                <p class="block-site_header-text">Скачать</p>
+            </div>
+            <a href="/media/{{ post.file }}" download><button class="block-site_button">Скачать</button></a>
         </div>
-    {% endblock %}
-</body>
-</html>
+    {% endif %}
+    </div>
+{% endblock %}
