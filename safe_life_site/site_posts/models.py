@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from slugify import slugify
 
 def user_directory_path(instance, filename):
     try:
@@ -13,12 +14,16 @@ def user_directory_path(instance, filename):
 class Branches(models.Model):
     name_branche = models.CharField(max_length=50)
     category = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True, null=True, allow_unicode=True)
     
     def __str__(self):
         return self.name_branche
     
     def get_absolute_url(self):
-        return reverse('posts_data', kwargs={'id': self.pk})
+        return reverse('posts_data', kwargs={'slug': self.slug})
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name_branche)
+        return super().save(*args, **kwargs)
 
 class Posts(models.Model):
     branche = models.ForeignKey(Branches, on_delete=models.CASCADE)
@@ -29,12 +34,16 @@ class Posts(models.Model):
     text = models.TextField(blank=True)
     file = models.FileField(upload_to=user_directory_path, blank=True)
     date = models.DateTimeField(default=timezone.now)
+    slug = models.SlugField(unique=True, blank=True, null=True, allow_unicode=True)
     
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('post_detail', kwargs={'pk': self.pk})
+        return reverse('post_detail', kwargs={'slug': self.slug})
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 class Images(models.Model):
     posts = models.ForeignKey(Posts, on_delete=models.CASCADE)
