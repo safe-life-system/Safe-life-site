@@ -59,5 +59,28 @@
             <a href="/media/{{ post.file }}" download><button class="block-site_button">Скачать</button></a>
         </div>
     {% endif %}
+        <div class="block-site">
+            <div class="block-site_header">
+                <p class="block-site_header-text">Комментарии</p>
+            </div>
+            {% if user.is_authenticated %}
+                <form
+                    method="post"
+                    hx-post="{% url 'enter_comment' slug=post.slug %}"
+                    hx-target="#form-container"
+                    hx-swap="afterbegin"
+                    class="block-site_form"
+                >
+                    {% csrf_token %}
+                    {{ comment_form.text }}
+                    <button class="block-site_save-comment" type="submit">Отправить</button>
+                </form>
+            {% endif %}
+            <div id="form-container">
+                {% for comment in comments %}
+                    {% include "comment.html" with comment=comment %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}
