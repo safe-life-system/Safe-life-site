@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Comments
 
 class UserReg(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
@@ -10,3 +11,8 @@ class UserReg(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+class AddComment(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = ['text']
