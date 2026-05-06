@@ -28,7 +28,6 @@ def add_post(request):
 #Функция вывода постов
 def posts(request, slug):
     branche = get_object_or_404(Branches, slug = slug)
-    print(branche.name_branche)
     posts_data = Posts.objects.filter(branche__name_branche=branche).order_by('-date')
     for post in posts_data:
         post.main_text = markdown.markdown(post.main_text, extensions=['fenced_code', 'codehilite'])
@@ -58,3 +57,21 @@ def post_edit(request, slug):
     form = PostEdit(instance=post)
     form_image = PostImageDawnlod(instance=post)
     return render(request, 'post_create.html', {'form':form, 'form_image':form_image})
+
+#Редирект старых url постов 
+def old_posts_redirect(request, pk):
+    branche = Branches.objects.filter(pk=pk).first()
+
+    if branche:
+        return redirect(branche.get_absolute_url(), permanent=True)
+
+    return redirect('/', permanent=True)
+
+#Редирект старых url поста
+def old_post_detail_redirect(request, pk):
+    post = Posts.objects.filter(pk=pk).first()
+
+    if post:
+        return redirect(post.get_absolute_url(), permanent=True)
+
+    return redirect('/', permanent=True)
