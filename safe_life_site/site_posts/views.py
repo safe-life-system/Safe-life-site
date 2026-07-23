@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Branches, Posts, Images
+from .models import Branches, Posts, Images, MainPage
 from .form import PostImageDawnlod, PostEdit
 from django.utils import timezone
 import markdown
@@ -97,3 +97,8 @@ def enter_comment(request, slug):
                 "comment": comment,
             })
     return render(request, "comment.html", {"comment": comment,})
+
+def main_page(request):
+    page = get_object_or_404(MainPage)
+    page.main_text = markdown.markdown(page.main_text, extensions=['fenced_code', 'codehilite'])
+    return render(request, "main.html", {'main_page':page,})

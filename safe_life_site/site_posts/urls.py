@@ -10,4 +10,5 @@ urlpatterns_posts = [
     path('posts_detail/<slug:slug>', views.post_detail, name='post_detail'),
     path('post/editer/<slug:slug>', views.post_edit, name='post_edit'),
     path("comment/<slug:slug>", views.enter_comment, name="enter_comment"),
+    path('', views.main_page, name="main_page"),
 ]

@@ -48,3 +48,10 @@ class Posts(models.Model):
 class Images(models.Model):
     posts = models.ForeignKey(Posts, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=user_directory_path, blank=True)
+    
+class MainPage(models.Model):
+    title = models.CharField(max_length=50)
+    main_text = models.TextField()
+    
+    def __str__(self):
+        return self.title

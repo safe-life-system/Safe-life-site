@@ -32,7 +32,7 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name="main.html")),
+    path('', include(urlpatterns_posts)),
     path('manager-passwords/', TemplateView.as_view(template_name="error.html")),
     path('messenger/', TemplateView.as_view(template_name="error.html")),
     path('forum/', TemplateView.as_view(template_name="error.html")),
